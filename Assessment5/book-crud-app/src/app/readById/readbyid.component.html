@@ -1,0 +1,41 @@
+<!-- modal-component.html -->
+<div *ngIf="showModal" class="modal" data-bs-backdrop="static" 
+data-bs-keyboard="false" 
+ tabindex="-1" role="dialog" style="display:block; background: rgba(184, 183, 183, 0.34);">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Book Details</h5>
+          <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3" 
+                style="width: 8rem;">Book ID</span>
+                <input type="text" class="form-control" id="basic-url" 
+                value={{book.id}}
+                aria-describedby="basic-addon3 basic-addon4" disabled>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3" 
+                style="width: 8rem;">Book Title</span>
+                <input type="text" class="form-control" id="basic-url" 
+                value={{book.title}} style="color: midnightblue;"
+                aria-describedby="basic-addon3 basic-addon4" disabled>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon3" 
+                style="width: 8rem;">Book Price</span>
+                <input type="text" class="form-control" id="basic-url" 
+                value=${{book.price}} style="color: darkgreen;"
+                aria-describedby="basic-addon3 basic-addon4" disabled>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

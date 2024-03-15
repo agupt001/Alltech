@@ -1,0 +1,42 @@
+<table class="table table-striped table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (book of books; track $index) {
+            <tr>
+                <td>{{book.id}}</td>
+                <td style="color: darkblue;">{{book.title}}</td>
+                <td style="color: darkgreen;">${{book.price}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Actions">
+                        <button type="button" class="btn btn-primary"
+                        (click)="openReadModal(book.id)"
+                        >View</button>
+                        <button type="button" class="btn btn-warning"
+                        (click)="openUpdateModal(book.id)"
+                        >Update</button>
+                        <button type="button" class="btn btn-danger"
+                        (click)="deleteBook(book.id)" 
+                        >Delete</button>
+                    </div>
+                </td>
+              </tr>
+        }
+      
+      
+    </tbody>
+  </table>
+
+  @if (openReadModalComp) {
+    <readbyid-component></readbyid-component>
+  }
+
+  @if (openUpdateModalComp) {
+    <update-component></update-component>
+  }

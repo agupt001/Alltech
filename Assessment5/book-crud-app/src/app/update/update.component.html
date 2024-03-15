@@ -1,0 +1,117 @@
+<!-- modal-component.html -->
+<div
+  *ngIf="showModal"
+  class="modal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  role="dialog"
+  style="display: block; background: rgba(184, 183, 183, 0.34)"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <form #updateForm="ngForm" (ngSubmit)="updateBook(updateForm)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Book Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="closeModal()"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div
+            class="input-group"
+            style="margin-bottom: 1rem"
+            [class.input-invalid]="
+              updateForm.submitted && updateForm.controls['title'].invalid
+            "
+          >
+            <span
+              class="input-group-text"
+              id="basic-addon3"
+              style="width: 163px"
+              >Book Title</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              aria-describedby="basic-addon3 basic-addon4"
+              [(ngModel)]="book.title"
+              placeholder="Enter Title here..."
+              required
+            />
+            <div class="input-group-append">
+              <span
+                class="input-group-text"
+                *ngIf="
+                  updateForm.submitted && updateForm.controls['title'].invalid
+                "
+              ></span>
+            </div>
+            <div
+              *ngIf="
+                updateForm.submitted && updateForm.controls['title'].invalid
+              "
+              class="text-danger"
+            >
+              Title is required.
+            </div>
+          </div>
+
+          <div
+            class="input-group"
+            style="margin-bottom: 1rem"
+            [class.input-invalid]="
+              updateForm.submitted && updateForm.controls['price'].invalid
+            "
+          >
+            <span
+              class="input-group-text"
+              id="basic-addon3"
+              style="width: 163px"
+              >Book Price</span
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="price"
+              aria-describedby="basic-addon3 basic-addon4"
+              [(ngModel)]="book.price"
+              placeholder="Enter Price here..."
+              required
+            />
+            <div class="input-group-append">
+              <span
+                class="input-group-text"
+                *ngIf="
+                  updateForm.submitted && updateForm.controls['price'].invalid
+                "
+              ></span>
+            </div>
+            <div
+              *ngIf="
+                updateForm.submitted && updateForm.controls['price'].invalid
+              "
+              class="text-danger"
+            >
+              Price is required.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

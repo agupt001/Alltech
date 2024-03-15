@@ -1,0 +1,13 @@
+.input-invalid .form-control {
+    border: 2px solid red;
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+}
+
+.text-danger {
+    margin-top: .25rem;
+    font-size: .875em;
+}

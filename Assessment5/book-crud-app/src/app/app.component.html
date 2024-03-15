@@ -1,0 +1,34 @@
+<div style="margin-bottom: 2rem;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary"
+    style="padding-top: 0;">
+    <div class="container-fluid"
+      style="background-color: rgba(27, 24, 24, 0.93); padding: 1rem 3rem;">
+      <a class="navbar-brand"><img src="/assets/img/book_logo.tiff"
+        style="width: 5rem;"></a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" style="grid-gap: 5rem; padding-left: 5rem;">
+          
+          <li class="nav-item"><a class="nav-link active"
+            aria-current="page" routerLink="/read-all-component"
+            routerLinkActive="router-link-active" ariaCurrentWhenActive="page"
+            style="color: white; display: flex; align-items: center; gap: 8px;"><i
+              class="bi bi-file-earmark-plus fs-3"></i>Book List</a></li>
+              
+          <li class="nav-item"><a class="nav-link" routerLink="/create-component"
+            routerLinkActive="router-link-active" ariaCurrentWhenActive="page"
+            style="color: white; display: flex; align-items: center; gap: 8px;"><i
+              class="bi bi-book-half fs-3"></i>Create Book</a></li>
+              
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div><router-outlet></router-outlet></div>

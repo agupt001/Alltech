@@ -1,0 +1,41 @@
+<div style="text-align: center;">
+	
+	<div class="card" style="width:50%; margin: auto;">
+			<div class="card-header">Create Book</div>
+			<div class="card-body">
+				<form #createForm = "ngForm" (ngSubmit)="submit(createForm)">
+
+					<div class="input-group" style="margin-bottom: 1rem;" 
+                    [class.input-invalid]="createForm.submitted && createForm.controls['title'].invalid">
+						<span class="input-group-text" id="basic-addon3" style="width: 163px;">Book
+							Title</span> <input type="text" class="form-control" name="title"
+							aria-describedby="basic-addon3 basic-addon4" [(ngModel)] = "book.title"
+							placeholder="Enter Title here..." required>
+                            <div class="input-group-append">
+                                <span class="input-group-text" *ngIf="createForm.submitted && createForm.controls['title'].invalid"></span>
+                            </div>
+                            <div *ngIf="createForm.submitted && createForm.controls['title'].invalid" class="text-danger">
+                                Title is required.
+                              </div>
+					</div>
+                    
+
+					<div class="input-group" style="margin-bottom: 1rem;"
+                    [class.input-invalid]="createForm.submitted && createForm.controls['price'].invalid">
+						<span class="input-group-text" id="basic-addon3" style="width: 163px;">Book
+							Price</span> <input type="number" class="form-control" name="price"
+							aria-describedby="basic-addon3 basic-addon4" [(ngModel)] = "book.price"
+							placeholder="Enter Price here..." required>
+                            <div class="input-group-append">
+                                <span class="input-group-text" *ngIf="createForm.submitted && createForm.controls['price'].invalid"></span>
+                            </div>
+                            <div *ngIf="createForm.submitted && createForm.controls['price'].invalid" class="text-danger">
+                                Price is required.
+                              </div>
+					</div>
+                    
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
