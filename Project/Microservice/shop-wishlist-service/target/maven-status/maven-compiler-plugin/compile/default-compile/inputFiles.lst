@@ -1,0 +1,8 @@
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/service/WishlistServiceImpl.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/ShopWishlistServiceApplication.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/entity/Wishlist.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/response/WishlistResponse.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/controller/WishlistController.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/service/WishlistService.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/request/WishlistRequest.java
+/Users/ankitgupta/eclipse-workspace/shop-wishlist-service/src/main/java/com/api/shopwishlistservice/repository/WishlistRepository.java
