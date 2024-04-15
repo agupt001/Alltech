@@ -1,0 +1,65 @@
+#spring:
+# cloud:
+#  gateway:
+#   routes:
+#    - id: catch-all
+#      uri: forward:/notfound
+#      order: 10000  # Ensure this is the last route checked
+#      predicates:
+#       - Path=/**
+#            
+#    - id: shop-user-service
+#      uri: lb://SHOP-USER-SERVICE
+#      predicates:
+#       - Path=/user/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/user/(?<remaining>.*), /$\{remaining}
+#       
+#    - id: shop-admin-service
+#      uri: lb://SHOP-ADMIN-SERVICE
+#      predicates:
+#       - Path=/admin/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/admin/(?<remaining>.*), /$\{remaining}
+#       
+#    - id: shop-cart-service
+#      uri: lb://SHOP-CART-SERVICE
+#      predicates:
+#       - Path=/cart/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/cart/(?<remaining>.*), /$\{remaining}
+#    
+#    - id: shop-discounts-service
+#      uri: lb://SHOP-DISCOUNTS-SERVICE
+#      predicates:
+#       - Path=/discounts/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/discounts/(?<remaining>.*), /$\{remaining}
+#       
+#    - id: shop-products-service
+#      uri: lb://SHOP-PRODUCTS-SERVICE
+#      predicates:
+#       - Path=/products/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/products/(?<remaining>.*), /$\{remaining}
+#       
+#    - id: shop-sales-service
+#      uri: lb://SHOP-SALES-SERVICE
+#      predicates:
+#       - Path=/sales/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/sales/(?<remaining>.*), /$\{remaining}
+#       
+#    - id: shop-wishlist-service
+#      uri: lb://SHOP-WISHLIST-SERVICE
+#      predicates:
+#       - Path=/wishlist/**
+#      filters:
+#       - AuthenticationFilter
+#       - RewritePath=/wishlist/(?<remaining>.*), /$\{remaining}
