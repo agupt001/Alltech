@@ -1,0 +1,83 @@
+@if (spinner) {
+    <div class="d-flex justify-content-center m-3">
+<div class="spinner-border text-primary" role="status"></div>
+</div>
+}@else {
+<div class="d-flex flex-wrap m-auto" style="width: 57rem">
+  @if (wishlist.length>0) { @for (product of wishlist; track $index) {
+  <div class="card m-3" style="width: 17rem">
+    <img
+      src="{{ product.image_src }}"
+      class="card-img-top"
+      style="height: 200px"
+      alt="{{ product.name }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+
+      <div class="card-text ms-3">
+        <div>ID: {{ product.id }}</div>
+        <div>Category: {{ product.category }}</div>
+        @if (product.discount) {
+            <div class="position-relative">
+              Price:
+              <span
+                class="text-decoration-line-through ms-1 me-1 text-danger position-relative"
+                >${{ product.price }}
+                <span
+                  class="position-absolute top-0 start-100 badge 
+                  rounded-pill text-bg-warning fst-italic"
+                  style="font-size: 11px; transform: translate(-8%, -33%);"
+                >
+                  -${{ product.discount }}
+                </span>
+              </span>
+              <span class="fw-bold ms-1 text-info-emphasis position-absolute end-0 me-3"
+                >${{ product.final_price }}</span>
+            </div>
+            }@else {
+            <div>Price: ${{ product.price }}</div>
+            }
+      </div>
+
+      <div class="mt-3">
+        <i
+          class="bi bi-heart-fill me-3 text-danger fs-4 float-end"
+          (click)="wishlistClick(product)"
+          id="wishlist-{{ product.id }}"
+          title="Wishlist"
+          style="cursor: pointer"
+        ></i>
+
+        @if (product.inCart) {
+        <button
+          type="button"
+          class="btn btn-danger float-start"
+          (click)="cartBtnClick(product)"
+        >
+          <i class="bi bi-dash-square me-1"></i>
+          Remove from cart
+        </button>
+        }@else {
+        <button
+          type="button"
+          class="btn btn-primary float-start"
+          (click)="cartBtnClick(product)"
+        >
+          <i class="bi bi-plus-square me-1"></i>
+          Add to cart
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+  } }@else {
+  <div
+    class="empty-wishlist border border-secondary w-100 p-4 rounded 
+    fs-5 text-black bg-warning bg-gradient text-center mt-3"
+  >
+    No wishlist items found!
+  </div>
+  }
+</div>
+}

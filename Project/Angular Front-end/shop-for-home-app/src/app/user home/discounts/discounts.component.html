@@ -1,0 +1,68 @@
+@if (spinner) {
+    <div class="d-flex justify-content-center m-3">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    }@else {
+    <div class="d-flex flex-wrap m-auto" style="width: 57rem">
+        @if (discounts.length>0) { @for (discount of discounts; track $index) {
+      <div class="card m-3 w-100">
+        <div class="card-body d-flex align-items-center justify-content-between">
+          
+          <img
+            src="{{ discount.product.image_src }}"
+            class="rounded me-4"
+            style="width: 100px"
+            alt="{{ discount.product.name }}"
+          />
+    
+          <div class="me-5 flex-grow-1">
+            <h5 class="prod-name mb-1">{{ discount.product.name }}</h5>
+    
+            <div class="ms-4" style="font-size: 11px">
+              <div>ID - {{ discount.product.id }}</div>
+              <div>Category - {{ discount.product.category }}</div>
+              @if (discount.product.discount) {
+                <div>
+                  Price:
+                  <span
+                    class="text-decoration-line-through ms-1 me-1 text-danger position-relative"
+                    >${{ discount.product.price }}
+                    <span
+                      class="position-absolute top-0 start-100 badge 
+                      rounded-pill text-bg-warning fst-italic"
+                      style="font-size: 8px; transform: translate(-8%, -33%);"
+                    >
+                      -${{ discount.product.discount }}
+                    </span>
+                  </span>
+                  <span class="fw-bold ms-1 text-info-emphasis ms-5"
+                    >${{ discount.product.final_price }}</span>
+                </div>
+                }@else {
+                <div>Price: ${{ discount.product.price }}</div>
+                }
+            </div>
+          </div>
+    
+          <div class="ms-auto border-danger rounded p-3 
+          text-warning-emphasis d-flex flex-column fst-italic" style="width: 12rem; border:1px dashed black">
+            <div class="align-self-center fw-semibold" style="font-size: 20px;">Discount</div>
+            <div class="align-self-center fw-bold">${{discount.discount_price}}</div>
+          </div>
+          
+        </div>
+      </div>
+    
+      }
+    
+    }@else {
+        <div
+          class="empty-wishlist border border-secondary w-100 p-4 rounded 
+          fs-5 text-black bg-warning bg-gradient text-center mt-3"
+        >
+          You don't have any discounts!
+        </div>
+        }
+    </div>
+    }
+    

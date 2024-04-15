@@ -1,0 +1,138 @@
+<div style="text-align: center; padding-top: 2rem;">
+    <h2 style="margin-bottom:2rem;">Welcome to Shop For Home login page</h2>
+    <div class="card-container">
+    <div class="card" style="width: 38rem; margin: auto; " [class.rotate]="isFlipped">
+
+        <div class="front">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+            <form #loginForm = "ngForm" (ngSubmit)="submit(loginForm)">
+
+                <div class="input-group" style="margin-bottom: 1rem;">
+                    <span class="input-group-text" id="basic-addon3"
+                        style="width: 163px;">Username</span> <input type="text"
+                        class="form-control" name="username" [(ngModel)] = "userLoginCredentials.username"
+                        aria-describedby="basic-addon3 basic-addon4"
+                        placeholder="Enter Username here...">
+                </div>
+
+                <div class="input-group" style="margin-bottom: 1rem;">
+                    <span class="input-group-text" id="basic-addon3"
+                        style="width: 163px;">Password</span> <input type="password"
+                        class="form-control" name="password" [(ngModel)] = "userLoginCredentials.password"
+                        aria-describedby="basic-addon3 basic-addon4"
+                        placeholder="Enter Password here...">
+                </div>
+
+                <div class="input-group mb-3 float-start w-auto mb-0">
+                    <span class="input-group-text">Admin Login?</span>
+                    <div class="input-group-text">
+                        <input type="checkbox" class="form-check-input mt-0" aria-label="is Admin?" name="admin" [(ngModel)] = "isAdmin">
+                    </div>
+                    
+                  </div>
+                  
+                <div class="float-end">
+                    <button type="button" class="btn btn-light border border-success me-3 text-success" (click)="flipCard()">Sign Up</button>
+                    <button type="reset" class="btn btn-light border border-danger me-3 text-danger reset-btn">Reset</button>
+                    <button type="submit" class="btn btn-light border border-secondary text-primary submit-btn">Login</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+<div class="back">
+    <div class="card-header">Sign Up</div>
+    <div class="card-body">
+        <form
+        (ngSubmit)="createUser(createForm)"
+        #createForm="ngForm"
+        style="width: 80%; margin: auto"
+      >
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 117px"
+            >Name</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            aria-describedby="basic-addon3 basic-addon4"
+            [(ngModel)]="user.name"
+            placeholder="Enter Name here..."
+            required
+          />
+        </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 117px"
+            >Email</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            aria-describedby="basic-addon3 basic-addon4"
+            [(ngModel)]="user.email"
+            placeholder="Enter Email here..."
+            required
+          />
+        </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 117px"
+            >Phone</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="phone"
+            [(ngModel)]="user.phone"
+            aria-describedby="basic-addon3 basic-addon4"
+            placeholder="Enter Phone Number here..."
+            maxlength="10"
+            required
+          />
+        </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 117px"
+            >Username</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="user.username"
+            aria-describedby="basic-addon3 basic-addon4"
+            placeholder="Enter Username here..."
+            required
+          />
+        </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 117px"
+            >Password</span
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="user.password"
+            aria-describedby="basic-addon3 basic-addon4"
+            placeholder="Enter Password here..."
+            
+            required
+          />
+        </div>
+
+        <button type="button" class="btn btn-light border border-primary text-primary me-3" (click)="flipCard()">Back</button>
+        <button type="submit" class="btn btn-light border border-success text-success">Sign Up</button>
+      </form>
+    </div>
+    </div>
+
+    </div>
+</div>
+</div>
