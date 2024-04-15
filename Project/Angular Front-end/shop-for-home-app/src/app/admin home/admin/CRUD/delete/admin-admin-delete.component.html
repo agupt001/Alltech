@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-center">
+    <div class="input-group mb-3" style="width: 21rem;">
+        <span class="input-group-text" id="basic-addon1">Admin ID</span>
+        <input type="number" class="form-control" placeholder="Enter Admin ID" 
+        aria-label="Admin ID" aria-describedby="basic-addon1" [(ngModel)]="userId" [min]=1 required>
+        <button type="button" class="btn btn-light border" (click)="deleteUser()">Delete</button>
+        
+      </div></div>

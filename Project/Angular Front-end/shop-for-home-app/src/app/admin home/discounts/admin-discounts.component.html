@@ -1,0 +1,12 @@
+<div class="card m-auto fixed-top header">
+    <div class="card-body text-success px-5">
+        <div class="me-auto mb-2 mb-lg-0 d-flex">
+            <span class="me-5 fw-semibold"><i class="bi bi-cash-coin me-1"></i>Discounts</span>
+            <span style="cursor: pointer;" class="me-4 text-primary-emphasis" [routerLink]="['/admin/home/discounts/create']" routerLinkActive="router-link-active" ><i class="bi bi-database-add me-1"></i>Create</span>
+            <span style="cursor: pointer;" class="me-4 text-info-emphasis" [routerLink]="['/admin/home/discounts/read-all']" routerLinkActive="router-link-active" ><i class="bi bi-table me-1"></i>Read All</span>
+        </div>
+    </div>
+  </div> 
+<div style="margin-top: 72px;">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-3 mb-3" style="border-bottom: 1px solid #dee2e6;">
+    <div class="container-fluid">
+      <a class="navbar-brand">Shop For Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item ms-4 me-4">
+                <a class="nav-link text-success-emphasis" routerLink="/admin/home/sales" 
+                routerLinkActive="router-link-active" ariaCurrentWhenActive="page">
+                <i class="bi bi-graph-up me-1"></i>Sales Report</a>
+              </li>
+
+            <li class="nav-item dropdown" style="width: 160px;">
+                <a class="nav-link dropdown-toggle text-primary-emphasis" role="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-gear me-1"></i>Manage
+                </a>
+                <ul class="dropdown-menu" style="z-index: 1060;">
+                  <li><a class="dropdown-item text-warning-emphasis" [routerLink]="['/admin/home/users']" routerLinkActive="router-link-active" ><i class="bi bi-people-fill me-1"></i>Users</a></li>
+                  <li><a class="dropdown-item text-primary-emphasis" [routerLink]="['/admin/home/admin']" routerLinkActive="router-link-active" ><i class="bi bi-person-fill-gear me-1"></i>Admins</a></li>
+                  <li><a class="dropdown-item text-primary" [routerLink]="['/admin/home/products']" routerLinkActive="router-link-active" ><i class="bi bi-globe-americas me-1"></i>Products</a></li>
+                  <li><a class="dropdown-item text-success" [routerLink]="['/admin/home/discounts']" routerLinkActive="router-link-active" ><i class="bi bi-cash-coin me-1"></i>Discounts</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-info-emphasis" [routerLink]="['/admin/home/stocks']" routerLinkActive="router-link-active" ><i class="bi bi-database-fill-gear me-1"></i>Check Stocks</a></li>
+                </ul>
+              </li>
+
+          </ul>
+          <div class="logout">
+            <a class="nav-link text-danger-emphasis" routerLink="/" 
+                routerLinkActive="router-link-active" ariaCurrentWhenActive="page">
+                <i class="bi bi-box-arrow-left me-1"></i>Logout</a>
+          </div>
+      </div>
+    </div>
+  </nav>
+<div class="body-content"><router-outlet></router-outlet></div>

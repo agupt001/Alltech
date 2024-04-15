@@ -1,0 +1,36 @@
+<div class="card m-auto fixed-top header">
+    <div class="card-body text-info-emphasis px-5">
+        <div class="me-auto mb-2 mb-lg-0 d-flex">
+            <span class="fw-semibold"><i class="bi bi-database-fill-gear me-1"></i>Stocks</span>
+        </div>
+    </div>
+  </div> 
+
+<div class="card m-auto justify-content-center d-flex" style="margin-top: 75px !important; max-width: 68rem;">
+    <div class="card-body">
+<table class="table table-striped table-hover" id="userTable">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @for (product of products; track $index) {
+            <tr>
+                <th scope="row">#{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+              </tr>
+              
+        }
+    </tbody>
+  </table>
+  
+  </div>
+  </div>

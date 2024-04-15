@@ -1,0 +1,111 @@
+<div style="text-align: center">
+  <div class="card" style="max-width: 38rem; margin: auto">
+    <div class="card-header">Create Discount</div>
+    <div class="card-body">
+      <form
+        (ngSubmit)="createDiscount(createForm)"
+        #createForm="ngForm"
+        style="width: 80%; margin: auto"
+      >
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 131px;"
+            >User ID</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="name" 
+            style="z-index: 2;"
+            aria-describedby="basic-addon3 basic-addon4"
+            [(ngModel)]="discount.userId"
+            placeholder="Enter User ID here..."
+            (keyup.enter)="getUserDetails()" (blur)="getUserDetails()"
+            required
+          />
+        </div>
+
+        
+        <div *ngIf="userDetailsBool" [class]="heightClass" [id]="animateId">
+            <div class="card-body" style="padding: 10px;">
+              <table class="table table-borderless mb-0" id="detailsTable">
+                <tbody>
+                  <tr>
+                    <th scope="row">ID</th>
+                    <td>{{user.id}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Name</th>
+                    <td>{{user.name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Email</th>
+                    <td>{{user.email}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 131px;"
+            >Product ID</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="category"
+            aria-describedby="basic-addon3 basic-addon4"
+            [(ngModel)]="discount.product_id"
+            placeholder="Enter Product ID here..."
+            style="z-index: 2;"
+            (keyup.enter)="getProductDetails()" (blur)="getProductDetails()"
+            required
+          />
+        </div>
+        <div *ngIf="prodDetailsBool" [class]="heightClassProd" [id]="animateIdProd">
+            <div class="card-body" style="padding: 10px;">
+              <table class="table table-borderless mb-0" id="detailsTable">
+                <tbody>
+                  <tr>
+                    <th scope="row">ID</th>
+                    <td>{{product.id}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Name</th>
+                    <td>{{product.name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Category</th>
+                    <td>{{product.category}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Price</th>
+                    <td>${{product.price}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+
+        <div class="input-group" style="margin-bottom: 1rem">
+          <span class="input-group-text" id="basic-addon3" style="width: 131px;"
+            >Discount Price</span
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            [(ngModel)]="discount.discount_price"
+            aria-describedby="basic-addon3 basic-addon4"
+            placeholder="Enter Discount here..."
+            required
+          />
+        </div>
+
+        <button *ngIf="deleteBtnActivated" type="button" class="btn btn-danger me-3" [disabled]="disableBtn" (click)="deleteDiscount()">Delete</button>
+        <button type="submit" class="btn btn-primary" [disabled]="disableBtn">{{createBtn}}</button>
+      </form>
+    </div>
+  </div>
+  
+</div>

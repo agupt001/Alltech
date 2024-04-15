@@ -1,0 +1,15 @@
+<div class="card m-auto fixed-top header">
+    <div class="card-body text-primary px-5">
+        <div class="me-auto mb-2 mb-lg-0 d-flex">
+            <span class="me-5 fw-semibold"><i class="bi bi-globe-americas me-1"></i>Products</span>
+            <span style="cursor: pointer;" class="me-4 text-primary-emphasis" [routerLink]="['/admin/home/products/create']" routerLinkActive="router-link-active" ><i class="bi bi-database-add me-1"></i>Create</span>
+            <span style="cursor: pointer;" class="me-4 text-success" [routerLink]="['/admin/home/products/read']" routerLinkActive="router-link-active" ><i class="bi bi-eyeglasses me-1"></i>Read By ID</span>
+            <span style="cursor: pointer;" class="me-4 text-info-emphasis" [routerLink]="['/admin/home/products/read-all']" routerLinkActive="router-link-active" ><i class="bi bi-table me-1"></i>Read All</span>
+            <span style="cursor: pointer;" class="me-4 text-warning-emphasis" [routerLink]="['/admin/home/products/update']" routerLinkActive="router-link-active" ><i class="bi bi-pencil-square me-1"></i>Update</span>
+            <span style="cursor: pointer;" class="text-danger" [routerLink]="['/admin/home/products/delete']" routerLinkActive="router-link-active" ><i class="bi bi-trash3 me-1"></i>Delete</span>
+        </div>
+    </div>
+  </div> 
+<div style="margin-top: 72px;">
+    <router-outlet></router-outlet>
+</div>

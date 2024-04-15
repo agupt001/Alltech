@@ -1,0 +1,15 @@
+<div class="card m-auto header fixed-top">
+    <div class="card-body text-warning-emphasis px-5">
+        <div class="me-auto mb-2 mb-lg-0 d-flex">
+            <span class="me-5 fw-semibold"><i class="bi bi-people-fill me-1"></i>Users</span>
+            <span style="cursor: pointer;" class="me-4 text-primary" [routerLink]="['/admin/home/users/create']" routerLinkActive="router-link-active" ><i class="bi bi-person-fill-add me-1"></i>Create</span>
+            <span style="cursor: pointer;" class="me-4 text-success" [routerLink]="['/admin/home/users/read']" routerLinkActive="router-link-active" ><i class="bi bi-person-lines-fill me-1"></i>Read By ID</span>
+            <span style="cursor: pointer;" class="me-4 text-info-emphasis" [routerLink]="['/admin/home/users/read-all']" routerLinkActive="router-link-active" ><i class="bi bi-person-rolodex me-1"></i>Read All</span>
+            <span style="cursor: pointer;" class="me-4 text-warning-emphasis" [routerLink]="['/admin/home/users/update']" routerLinkActive="router-link-active" ><i class="bi bi-person-fill-gear me-1"></i>Update</span>
+            <span style="cursor: pointer;" class="text-danger" [routerLink]="['/admin/home/users/delete']" routerLinkActive="router-link-active" ><i class="bi bi-person-fill-dash me-1"></i>Delete</span>
+        </div>
+    </div>
+  </div> 
+<div style="margin-top: 72px;">
+    <router-outlet></router-outlet>
+</div>

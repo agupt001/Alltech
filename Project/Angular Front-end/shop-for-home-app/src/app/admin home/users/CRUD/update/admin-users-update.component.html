@@ -1,0 +1,71 @@
+<div style="text-align: center;">
+	
+	<div class="card" style="max-width:38rem; margin: auto;">
+			<div class="card-header">Update User</div>
+			<div class="card-body">
+                <form (ngSubmit)="getUser(userSearchFrom)" #userSearchFrom = "ngForm" style="width: 80%; margin: auto;">
+                    <div class="input-group" style="margin-bottom: 1rem;">
+						<span class="input-group-text" id="basic-addon3" style="width: 117px;">ID</span> 
+                        <input type="number" class="form-control" name="id" (click)="hideUserForm()"
+							aria-describedby="basic-addon3 basic-addon4" [(ngModel)]="userId"
+							placeholder="Enter User ID to update..." required>
+                        <button type="submit" class="btn btn-light border">Get User</button>
+					</div>
+                    </form>
+
+				<form (ngSubmit)="updateUser(createForm)" #createForm = "ngForm" style="width: 80%; margin: auto;">
+                    
+
+                    @if (showUserForm) {
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <span class="input-group-text" id="basic-addon3" style="width: 117px;">Name</span> 
+                            <input type="text" class="form-control" name="name"
+                                aria-describedby="basic-addon3 basic-addon4" [(ngModel)]="user.name"
+                                placeholder="Enter Name here..." required>
+                        </div>
+    
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <span class="input-group-text" id="basic-addon3" style="width: 117px;">Email</span> 
+                            <input type="text" class="form-control" name="email"
+                                aria-describedby="basic-addon3 basic-addon4" [(ngModel)]="user.email"
+                                placeholder="Enter Email here..." required>
+                        </div>
+    
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <span class="input-group-text" id="basic-addon3" style="width: 117px;">Phone</span> 
+                            <input type="tel" class="form-control" name="phone" [(ngModel)]="user.phone"
+                                aria-describedby="basic-addon3 basic-addon4" maxlength="10" (input)="validatePhoneNumber()"
+                                placeholder="Enter Phone Number here..." required>
+                                <span *ngIf="phoneNumberError" style="color: red;">Please enter a valid phone number</span>
+                        </div>
+    
+                        <div class="input-group mb-3 d-flex">
+                            <span class="input-group-text flex-fill">Do you want to update username and password?</span>
+                            <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0" aria-label="Username and Password?" name="credentials" [(ngModel)] = "userNameRequested">
+                            </div>
+                            
+                          </div>
+    
+                        @if (userNameRequested) {
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <span class="input-group-text" id="basic-addon3" style="width: 117px;">Username</span> 
+                                <input type="text" class="form-control" name="username" [(ngModel)]="user.username"
+                                    aria-describedby="basic-addon3 basic-addon4"
+                                    placeholder="Enter Username here..." required>
+                            </div>
+    
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <span class="input-group-text" id="basic-addon3" style="width: 117px;">Password</span> 
+                                <input type="password" class="form-control" name="password" [(ngModel)]="user.password"
+                                    aria-describedby="basic-addon3 basic-addon4"
+                                    placeholder="Enter Password here..." required>
+                            </div>
+                        }
+    
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    }
+					
+				</form>
+			</div>
+		</div>
